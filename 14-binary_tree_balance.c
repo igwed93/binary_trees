@@ -42,7 +42,7 @@ int binary_height(const binary_tree_t *node, int count)
 		count_l = binary_height(node->left, count + 1);
 	if (node->right)
 		count_r = binary_height(node->right, count + 1);
-	
+
 	if (!node->left && !node->right)
 		return (count);
 
