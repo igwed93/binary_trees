@@ -47,7 +47,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	if (second == first->parent)
 		return (first->parent);
 
-	lowestAncestor = binary_trees_ancestor(first->parent, second);
+	if (first->n < second->n)
+		return (binary_trees_ancestor(first->parent, second));
+
 	lowestAncestor = binary_trees_ancestor(first, second->parent);
 
 	if (lowestAncestor == NULL)
